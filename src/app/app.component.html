@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+  Welcome to {{ title }}!
+</mat-toolbar>
+
+<section>
+
+  <mat-form-field class="example-full-width">
+    <input matInput
+            ngModle
+            q = "mysearch" 
+            placeholder="search" 
+            type="text" 
+            [(ngModel)]="searchTerm"
+            #term = "ngModel"
+            (ngModelChange)="newSearch(term)">
+  </mat-form-field>
+
+  <div *ngFor="let result of results | async">
+    {{result}}  {{searchTerm}}
+  </div>
+</section>
+<section> 
+  <alert-button></alert-button>
+</section>
+ <!-- <input matInput
+                     ngModel
+                     #username='ngModel' 
+                     placeholder='Username'
+                     name='username'
+                     type="text"
+                     required > -->
